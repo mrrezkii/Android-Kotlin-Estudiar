@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Estudiar.NoActionBar">
         <activity
+            android:name=".data.view.activity.OnboardingActivity"
+            android:exported="true" />
+        <activity
             android:name=".data.view.activity.SplashScreenActivity"
             android:exported="true"
             android:screenOrientation="portrait"

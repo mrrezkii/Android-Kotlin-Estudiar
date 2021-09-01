@@ -23,10 +23,17 @@ class SplashScreenActivity : AppCompatActivity() {
         )
     }
 
+    private val moveToOnboardingActivity: Intent by lazy {
+        Intent(
+            this@SplashScreenActivity,
+            OnboardingActivity::class.java
+        )
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        delayMain()
+        delayOnboarding()
     }
 
     private fun delayMain() {
@@ -38,9 +45,18 @@ class SplashScreenActivity : AppCompatActivity() {
         }
     }
 
+    private fun delayOnboarding() {
+        activityScope.launch {
+            delay(3000)
+
+            startActivity(moveToOnboardingActivity)
+            finish()
+        }
+    }
+
     @Suppress("DEPRECATION")
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
         window.decorView.apply {
             systemUiVisibility =
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
