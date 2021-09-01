@@ -4,11 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.esdgabut.estudiar.data.viewmodel.MainViewModel
+import com.esdgabut.estudiar.data.viewmodel.factory.MainViewModelFactory
 import com.esdgabut.estudiar.databinding.ActivitySplashScreenBinding
 import kotlinx.coroutines.*
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.kodein
+import org.kodein.di.generic.instance
 
-class SplashScreenActivity : AppCompatActivity() {
+class SplashScreenActivity : AppCompatActivity(), KodeinAware {
 
+    override val kodein by kodein()
+    private val viewModelFactory: MainViewModelFactory by instance()
+    private lateinit var viewModel: MainViewModel
     private val activityScope = CoroutineScope(Dispatchers.Main)
     private val binding: ActivitySplashScreenBinding by lazy {
         ActivitySplashScreenBinding.inflate(
@@ -33,7 +43,13 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        delayOnboarding()
+        setupViewModel()
+        setupListener()
+        setupObserver()
+    }
+
+    private fun setupViewModel() {
+        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
     }
 
     private fun delayMain() {
@@ -52,6 +68,19 @@ class SplashScreenActivity : AppCompatActivity() {
             startActivity(moveToOnboardingActivity)
             finish()
         }
+    }
+
+    private fun setupListener() {
+        viewModel.getPreferencesOnboarding()
+    }
+
+    private fun setupObserver() {
+        viewModel.preferencesOnboarding.observe(this, Observer {
+            when (it.firstTime) {
+                true -> delayOnboarding()
+                false -> delayMain()
+            }
+        })
     }
 
     @Suppress("DEPRECATION")
