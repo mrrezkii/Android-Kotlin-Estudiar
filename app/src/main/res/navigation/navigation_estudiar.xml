@@ -3,24 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_estudiar"
-    app:startDestination="@id/berandaFragment">
+    app:startDestination="@id/navigation_beranda">
     <fragment
-        android:id="@+id/berandaFragment"
+        android:id="@+id/navigation_beranda"
         android:name="com.esdgabut.estudiar.data.view.fragment.BottomNav.BerandaFragment"
         android:label="fragment_beranda"
         tools:layout="@layout/fragment_beranda" />
     <fragment
-        android:id="@+id/obrolanFragment"
+        android:id="@+id/navigation_obrolan"
         android:name="com.esdgabut.estudiar.data.view.fragment.BottomNav.ObrolanFragment"
         android:label="fragment_obrolan"
         tools:layout="@layout/fragment_obrolan" />
     <fragment
-        android:id="@+id/forumFragment"
+        android:id="@+id/navigation_forum"
         android:name="com.esdgabut.estudiar.data.view.fragment.BottomNav.ForumFragment"
         android:label="fragment_forum"
         tools:layout="@layout/fragment_forum" />
     <fragment
-        android:id="@+id/profilFragment"
+        android:id="@+id/navigation_profil"
         android:name="com.esdgabut.estudiar.data.view.fragment.BottomNav.ProfilFragment"
         android:label="fragment_profil"
         tools:layout="@layout/fragment_profil" />
