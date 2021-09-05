@@ -1,14 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".data.view.fragment.bottomnav.ProfilFragment">
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <include
+        android:id="@+id/tvLayoutToolbar"
+        layout="@layout/toolbar_noback" />
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="@color/blue" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="-55dp"
+                app:cardCornerRadius="7dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="4dp"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Satrio Rahman Wicaksono"
+                    android:textColor="@color/blue" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="42dp"
+                    android:text="satriorahmanwicaksono@gmail.com"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="75dp"
+                    android:drawableStart="@drawable/ic_badge"
+                    android:drawablePadding="4dp"
+                    android:fontFamily="@font/open_sans"
+                    android:text="Starter"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView123"
+                    app:layout_constraintStart_toEndOf="@+id/textView123"
+                    app:layout_constraintTop_toTopOf="@+id/textView123"
+                    tools:ignore="SmallSp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="Umum"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:drawableEnd="@drawable/ic_baseline_arrow_forward"
+                android:fontFamily="@font/open_sans"
+                android:includeFontPadding="true"
+                android:paddingStart="24dp"
+                android:paddingEnd="14dp"
+                android:text="Pengaturan Notifikasi"
+                android:textAlignment="textStart"
+                tools:ignore="RtlSymmetry" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:drawableEnd="@drawable/ic_baseline_arrow_forward"
+                android:fontFamily="@font/open_sans"
+                android:includeFontPadding="true"
+                android:paddingStart="24dp"
+                android:paddingEnd="14dp"
+                android:text="Pengaturan Lokasi"
+                android:textAlignment="textStart"
+                tools:ignore="RtlSymmetry" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="Akun dan Keamanan"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:drawableEnd="@drawable/ic_baseline_arrow_forward"
+                android:fontFamily="@font/open_sans"
+                android:includeFontPadding="true"
+                android:paddingStart="24dp"
+                android:paddingEnd="14dp"
+                android:text="Pengaturan Keamanan"
+                android:textAlignment="textStart"
+                tools:ignore="RtlSymmetry" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:drawableEnd="@drawable/ic_baseline_arrow_forward"
+                android:fontFamily="@font/open_sans"
+                android:includeFontPadding="true"
+                android:paddingStart="24dp"
+                android:paddingEnd="14dp"
+                android:text="Email"
+                android:textAlignment="textStart"
+                tools:ignore="RtlSymmetry" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="Tentang kami"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:drawableEnd="@drawable/ic_baseline_arrow_forward"
+                android:fontFamily="@font/open_sans"
+                android:includeFontPadding="true"
+                android:paddingStart="24dp"
+                android:paddingEnd="14dp"
+                android:text="Tentang Estudiar"
+                android:textAlignment="textStart"
+                tools:ignore="RtlSymmetry" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="12dp"
+                android:background="@color/white"
+                android:fontFamily="@font/open_sans"
+                android:includeFontPadding="true"
+                android:paddingStart="24dp"
+                android:text="Keluar"
+                android:textAlignment="textStart"
+                android:textColor="#FF0000"
+                tools:ignore="RtlSymmetry" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
