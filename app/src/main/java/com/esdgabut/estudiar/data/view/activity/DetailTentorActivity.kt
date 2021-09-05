@@ -27,5 +27,8 @@ class DetailTentorActivity : AppCompatActivity() {
             .load(data?.url)
             .into(binding.ivPhoto)
         binding.tvTitle.text = data?.name
+        binding.tvBack.setOnClickListener {
+            finish()
+        }
     }
 }
