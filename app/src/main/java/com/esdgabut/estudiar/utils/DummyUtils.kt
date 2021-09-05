@@ -1,5 +1,6 @@
 package com.esdgabut.estudiar.utils
 
+import com.esdgabut.estudiar.data.model.ReviewModel
 import com.esdgabut.estudiar.data.model.TentorModel
 import java.util.*
 
@@ -73,4 +74,25 @@ fun createTentors(): List<TentorModel> {
         )
     )
     return tentors
+}
+
+fun createReviews(): List<ReviewModel> {
+    val review = ArrayList<ReviewModel>()
+    review.add(ReviewModel(review = "Suka banget sama tentornya ini", score = 5.0, name = "Abdoel"))
+    review.add(ReviewModel(review = "Tentornya wibu pars", score = 4.8, name = "Hakuu"))
+    review.add(
+        ReviewModel(
+            review = "Cara ngajarnya gampang, saya suka",
+            score = 4.4,
+            name = "Erna Ananda"
+        )
+    )
+    review.add(
+        ReviewModel(
+            review = "Bang, request wagyu A5",
+            score = 5.0,
+            name = "Waluyo Mahmudin"
+        )
+    )
+    return review
 }
