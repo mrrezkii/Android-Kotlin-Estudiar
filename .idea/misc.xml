@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable-xxhdpi/gradation_black.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/drawable/icon_splash.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/drawable/logo.xml" value="0.18958333333333333" />
+        <entry key="app/src/main/res/layout/activity_detail_tentor.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.18" />

@@ -1,5 +1,6 @@
 package com.esdgabut.estudiar.data.view.fragment.bottomnav
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,8 @@ import android.view.animation.LinearInterpolator
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import com.esdgabut.estudiar.R
+import com.esdgabut.estudiar.data.model.TentorModel
+import com.esdgabut.estudiar.data.view.activity.DetailTentorActivity
 import com.esdgabut.estudiar.data.view.adapter.TentorCardStackAdapter
 import com.esdgabut.estudiar.databinding.FragmentBerandaBinding
 import com.esdgabut.estudiar.utils.CardStackUtils
@@ -22,7 +25,7 @@ class BerandaFragment : Fragment(), CardStackListener {
     private lateinit var binding: FragmentBerandaBinding
     private lateinit var manager: CardStackLayoutManager
     private lateinit var utils: CardStackUtils
-    private val adapter by lazy { TentorCardStackAdapter(createTentors()) }
+    private lateinit var adapter: TentorCardStackAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +44,16 @@ class BerandaFragment : Fragment(), CardStackListener {
     }
 
     private fun initialized() {
+        adapter = TentorCardStackAdapter(
+            createTentors(),
+            object : TentorCardStackAdapter.OnAdapterListener {
+                override fun onClick(result: TentorModel) {
+                    val intent = Intent(view!!.context, DetailTentorActivity::class.java)
+                    intent.putExtra("data", result)
+                    startActivity(intent)
+                }
+
+            })
         manager = CardStackLayoutManager(requireActivity().applicationContext, this)
         utils = CardStackUtils(manager, adapter)
     }
