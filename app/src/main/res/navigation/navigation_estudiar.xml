@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_estudiar"
+    app:startDestination="@id/berandaFragment">
+    <fragment
+        android:id="@+id/berandaFragment"
+        android:name="com.esdgabut.estudiar.data.view.fragment.BottomNav.BerandaFragment"
+        android:label="fragment_beranda"
+        tools:layout="@layout/fragment_beranda" />
+    <fragment
+        android:id="@+id/obrolanFragment"
+        android:name="com.esdgabut.estudiar.data.view.fragment.BottomNav.ObrolanFragment"
+        android:label="fragment_obrolan"
+        tools:layout="@layout/fragment_obrolan" />
+    <fragment
+        android:id="@+id/forumFragment"
+        android:name="com.esdgabut.estudiar.data.view.fragment.BottomNav.ForumFragment"
+        android:label="fragment_forum"
+        tools:layout="@layout/fragment_forum" />
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="com.esdgabut.estudiar.data.view.fragment.BottomNav.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" />
+</navigation>
