@@ -24,8 +24,7 @@ class TentorCardStackAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val tentor = tentors[position]
-        holder.binding.itemName.text = "${tentor.id}. ${tentor.name}"
-        holder.binding.itemCity.text = tentor.city
+        holder.binding.itemName.text = "${tentor.name}"
         Glide.with(holder.binding.itemImage)
             .load(tentor.url)
             .into(holder.binding.itemImage)
