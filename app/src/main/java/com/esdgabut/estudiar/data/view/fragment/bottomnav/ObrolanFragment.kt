@@ -1,4 +1,4 @@
-package com.esdgabut.estudiar.data.view.fragment.BottomNav
+package com.esdgabut.estudiar.data.view.fragment.bottomnav
 
 import android.os.Bundle
 import android.view.LayoutInflater

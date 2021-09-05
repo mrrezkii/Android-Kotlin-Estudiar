@@ -2,7 +2,6 @@ package com.esdgabut.estudiar.data.view.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -83,14 +82,6 @@ class SplashScreenActivity : AppCompatActivity(), KodeinAware {
         })
     }
 
-    @Suppress("DEPRECATION")
-    override fun onStart() {
-        super.onStart()
-        window.decorView.apply {
-            systemUiVisibility =
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
-        }
-    }
 
     override fun onPause() {
         activityScope.cancel()

@@ -1,4 +1,4 @@
-package com.esdgabut.estudiar.data.view.fragment.Onboarding
+package com.esdgabut.estudiar.data.view.fragment.onboarding
 
 import android.os.Bundle
 import android.view.LayoutInflater
